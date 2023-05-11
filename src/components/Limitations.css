@@ -63,6 +63,7 @@
   .bmi__limitations {
     display: flex;
     margin-left: 100px;
+    margin-top: 3rem;
   }
 
   .bmi__limitations-cards {
@@ -84,6 +85,7 @@
     text-align: left;
     grid-column: 1 / span 3;
     grid-row: 1;
+    margin-left: -100px;
   }
 
   .bmi__limitations-cards {

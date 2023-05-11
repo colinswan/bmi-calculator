@@ -4,11 +4,15 @@ This project, a Body Mass Index (BMI) calculator, was taken on as a challenge fr
 
 ## Table of Contents
 
-1. [Features](#features)
-2. [Technologies Used](#technologies-used)
-3. [Installation and Setup](#installation-and-setup)
-4. [Contributing](#contributing)
-5. [Credits](#credits)
+- [Body Mass Index (BMI) Calculator](#body-mass-index-bmi-calculator)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Installation and Setup](#installation-and-setup)
+  - [Contributing](#contributing)
+  - [Credits](#credits)
+  - [UI Desktop](#ui-desktop)
+  - [UI Mobile](#ui-mobile)
 
 ## Features
 
@@ -41,3 +45,11 @@ All contributions are welcome! If you see a way to improve the code or have a su
 ## Credits
 
 This project was undertaken by Colin Swan, as a challenge from Frontend Mentor. The layout and specifications were provided by Frontend Mentor, while the logic and styles were developed by Colin Swan.
+
+
+
+## UI Desktop
+![bmi-app-ui Desktop](./src/assets/bmi-ui-desktop.jpg)
+
+## UI Mobile
+![bmi-app-ui Mobile](./src/assets/bmi-ui-mobile.jpg)
