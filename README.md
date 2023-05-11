@@ -47,7 +47,6 @@ All contributions are welcome! If you see a way to improve the code or have a su
 This project was undertaken by Colin Swan, as a challenge from Frontend Mentor. The layout and specifications were provided by Frontend Mentor, while the logic and styles were developed by Colin Swan.
 
 
-
 ## UI Desktop
 ![bmi-app-ui Desktop](./src/assets/bmi-ui-desktop.jpg)
 
