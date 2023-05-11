@@ -1,0 +1,63 @@
+.person {
+  position: relative;
+  max-width: 100%;
+}
+
+.person__container {
+  position: relative;
+  background-color: transparent;
+  aspect-ratio: 1 / 1.5;
+  display: grid;
+  align-items: end;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: -300px;
+  z-index: 1;
+}
+
+
+.person__shape {
+  position: absolute;
+  inset: auto 0 0;
+  background-color: #dee8fc;
+  aspect-ratio: 1.5/1;
+  border-radius: 15px;
+  margin-inline: auto;
+}
+
+.person__img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 220px;
+  margin-left: 20px;
+  transform: scale(1);
+}
+
+@media (max-width: 300px) {
+  .person__container {
+    margin-top: -220px;
+  }
+}
+
+@media (min-width: 600px) {
+  .person {
+    max-width: 23rem;
+  }
+
+  .person__container {
+    margin-top: -190px;
+  }
+
+  .person__img {
+    width: 80%;
+    margin-left: 40px;
+    transform: scale(1.5);
+  }
+}
+
+@media (min-width: 912px) {
+  .person__container {
+    margin-top: -190px;
+  }
+}

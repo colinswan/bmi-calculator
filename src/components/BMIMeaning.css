@@ -1,0 +1,47 @@
+.bmi-meaning {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 6rem;
+  padding: 0 4rem;
+}
+
+.healthy__image-container {
+  width: 50%;
+}
+.bmi__meaning-container {
+  width: 50%;
+}
+
+.bmi-meaning h2 {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 6rem;
+}
+.bmi-meaning p {
+  text-align: left;
+}
+
+@media (max-width: 912px) {
+  .bmi-meaning {
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+  }
+  .healthy__image-container {
+    width: 100%;
+  }
+  .bmi__meaning-container {
+    width: 100%;
+  }
+  .bmi-meaning h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+  .bmi-meaning p {
+    text-align: center;
+  }
+}

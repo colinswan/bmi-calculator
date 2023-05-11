@@ -1,0 +1,56 @@
+.bmi__benefits-container {
+  background: rgb(251, 254, 255);
+  background: linear-gradient(
+    187deg,
+    rgba(251, 254, 255, 1) 0%,
+    rgba(244, 247, 255, 1) 100%
+  );
+  padding: 2rem 2rem;
+}
+.bmi__benefit-icon {
+  font-size: 2rem;
+  width: fit-content;
+  border-radius: 5000px;
+  padding: 20px;
+  margin-top: 2rem;
+}
+.icon-1 {
+  color: #d46798;
+  background-color: #f3dfec;
+}
+.icon-2 {
+  color: #d7a86c;
+  background-color: #f8efe2;
+}
+
+.icon-3 {
+  color: #7db3b5;
+  background-color: #e2f4f5;
+}
+
+.bmi__benefit-title {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.bmi__benefit-description {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+@media (min-width: 1084px) {
+  .bmi__benefits-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+    padding-top: 0;
+    border-radius: 15px;
+  }
+  .bmi__benefit {
+    width: 30%;
+  }
+}
