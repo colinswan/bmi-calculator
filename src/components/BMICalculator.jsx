@@ -12,11 +12,12 @@ import {
 
 function BMICalculator() {
   const [unit, setUnit] = useState("metric");
-  const [height, setHeight] = useState(null);
-  const [weight, setWeight] = useState(null);
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(0);
   const [idealWeight, setIdealWeight] = useState([0, 0]);
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleMetric = () => {
     if (unit === "imperial") {
@@ -35,12 +36,39 @@ function BMICalculator() {
   };
 
   useEffect(() => {
-    const calculatedBmi = calculateBmi(unit, weight, height);
-    const idealWeightRange = calculateIdealWeight(unit, height);
+    let error = false;
+    if (height && weight) {
+      if (unit === "metric") {
+        if (height < 100 || height > 300) {
+          setError("Metric height must be between 100cm and 300cm");
+          error = true;
+        } else if (weight < 10 || weight > 500) {
+          setError("Metric weight must be between 10kg and 500kg");
+          error = true;
+        }
+      } else if (unit === "imperial") {
+        if (height < 39.38 || height > 118.1) {
+          setError("Imperial height must be between 40 inch and 120 inch");
+          error = true;
+        } else if (weight < 22 || weight > 1102180) {
+          setError("Imperial weight must be between 22lb and 1100lb");
+          error = true;
+        }
+      }
 
-    setBmi(calculatedBmi);
-    setIdealWeight(idealWeightRange);
-    setMessage(getBmiMessage(calculatedBmi));
+      if (!error && height && weight) {
+        const calculatedBmi = calculateBmi(unit, weight, height);
+        const idealWeightRange = calculateIdealWeight(unit, height);
+        setBmi(calculatedBmi);
+        setIdealWeight(idealWeightRange);
+        setMessage(getBmiMessage(calculatedBmi));
+        setError("");
+      } else {
+        setBmi(0);
+        setIdealWeight([0, 0]);
+        setMessage("");
+      }
+    }
   }, [height, weight, unit]);
 
   return (
@@ -110,15 +138,9 @@ function BMICalculator() {
       </div>
 
       <div className="result__container">
-        {!bmi ? (
-          <>
-            <h3>Welcome!</h3>
-            <p>
-              Enter your height and weight and you will see your BMI results
-              here
-            </p>
-          </>
-        ) : (
+        {error ? (
+          <p>{error}</p>
+        ) : bmi && message ? (
           <div className="bmi__message-container">
             <div className="bmi__score">
               <h3>Your BMI is...</h3>
@@ -134,6 +156,14 @@ function BMICalculator() {
               </p>
             </div>
           </div>
+        ) : (
+          <>
+            <h3>Welcome!</h3>
+            <p>
+              Enter your height and weight and you will see your BMI results
+              here
+            </p>
+          </>
         )}
       </div>
     </div>
