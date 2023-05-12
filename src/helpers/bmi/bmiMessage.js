@@ -1,3 +1,10 @@
+/**
+ * Returns a message based on the BMI value
+ * @param {number} bmi
+ * @returns {string} The message based on the BMI value
+ * @example
+ * getBmiMessage(18.5) // "Your BMI suggests you are a healthy weight. Your ideal weight is between"
+ */
 export const getBmiMessage = (bmi) => {
   let message;
 

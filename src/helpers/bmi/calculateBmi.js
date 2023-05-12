@@ -1,3 +1,13 @@
+/**
+ * Calculate BMI based on the unit, weight and height
+ * @param {string} unit - The unit of measurement
+ * @param {number} weight - The weight
+ * @param {number} height - The height
+ * @returns {number} The calculated BMI
+ * @example
+ * calculateBmi("metric", 68, 180) // 21.0
+ *
+ */
 export const calculateBmi = (unit, weight, height) => {
   let calculatedBmi;
 
