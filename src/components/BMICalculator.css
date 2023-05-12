@@ -107,7 +107,6 @@ input[type="number"] {
   background-color: #486ffb;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  min-height: 150px;
   text-align: center;
 }
 
@@ -150,6 +149,9 @@ input[type="number"] {
 }
 
 @media (max-width: 540px) {
+  .result__container {
+    min-height: 150px;
+  }
   .input-fields {
     flex-direction: column;
   }
