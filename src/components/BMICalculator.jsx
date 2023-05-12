@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
-
 import "./BMICalculator.css";
+import { calculateBmi } from "../helpers/bmi/calculateBmi";
+import { calculateIdealWeight } from "../helpers/bmi/calculateIdealWeight";
+import { getBmiMessage } from "../helpers/bmi/bmiMessage";
+import {
+  toMetricHeight,
+  toMetricWeight,
+  toImperialHeight,
+  toImperialWeight,
+} from "../helpers/convertMeasurements";
+
 function BMICalculator() {
   const [unit, setUnit] = useState("metric");
   const [height, setHeight] = useState(null);
@@ -11,70 +20,27 @@ function BMICalculator() {
 
   const handleMetric = () => {
     if (unit === "imperial") {
-      // Convert height from inches to cm (1 inch = 2.54 cm)
-      setHeight((prevHeight) => (prevHeight * 2.54).toFixed(1));
-      // Convert weight from lbs to kg (1 lb = 0.453592 kg)
-      setWeight((prevWeight) => (prevWeight * 0.453592).toFixed(1));
+      setHeight((prevHeight) => toMetricHeight(prevHeight));
+      setWeight((prevWeight) => toMetricWeight(prevWeight));
     }
     setUnit("metric");
   };
 
   const handleImperial = () => {
     if (unit === "metric") {
-      setHeight((prevHeight) => (prevHeight * 0.393701).toFixed(1));
-      setWeight((prevWeight) => (prevWeight * 2.20462).toFixed(2));
+      setHeight((prevHeight) => toImperialHeight(prevHeight));
+      setWeight((prevWeight) => toImperialWeight(prevWeight));
     }
     setUnit("imperial");
   };
 
   useEffect(() => {
-    let calculatedBmi;
-
-    if (unit === "metric") {
-      calculatedBmi = Number(
-        (weight / ((height / 100) * (height / 100))).toFixed(1)
-      );
-    } else {
-      calculatedBmi = Number(((703 * weight) / (height * height)).toFixed(1));
-    }
+    const calculatedBmi = calculateBmi(unit, weight, height);
+    const idealWeightRange = calculateIdealWeight(unit, height);
 
     setBmi(calculatedBmi);
-
-    if (calculatedBmi < 18.5) {
-      setMessage(
-        "You BMI suggest are underweight. Your ideal weight is between"
-      );
-    } else if (calculatedBmi >= 18.5 && calculatedBmi <= 24.9) {
-      setMessage(
-        "Your BMI suggests you are a healthy weight. Your ideal weight is between"
-      );
-    } else if (calculatedBmi >= 25 && calculatedBmi <= 29.9) {
-      setMessage(
-        "Your BMI suggest you are overweight. Your ideal weight is between"
-      );
-    } else {
-      setMessage(
-        "Your BMI suggest you are obese. Your ideal weight is between"
-      );
-    }
-
-    if (unit === "metric") {
-      setIdealWeight([
-        Number((18.5 * (height / 100) * (height / 100)).toFixed(1)),
-        Number((24.9 * (height / 100) * (height / 100)).toFixed(1)),
-      ]);
-    } else {
-      const heightInMeters = height * 0.0254;
-
-      setIdealWeight([
-        Number(
-          ((18.5 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
-        ),
-        Number(
-          ((24.9 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
-        ),
-      ]);
-    }
+    setIdealWeight(idealWeightRange);
+    setMessage(getBmiMessage(calculatedBmi));
   }, [height, weight, unit]);
 
   return (
