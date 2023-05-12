@@ -48,38 +48,31 @@ function BMICalculator() {
       setMessage(
         "Your BMI suggests you are a healthy weight. Your ideal weight is between"
       );
-      if (unit === "metric") {
-        setIdealWeight([
-          Number((18.5 * (height / 100) * (height / 100)).toFixed(1)),
-          Number((24.9 * (height / 100) * (height / 100)).toFixed(1)),
-        ]);
-      } else {
-        const heightInMeters = height * 0.0254;
-
-        setIdealWeight([
-          Number(
-            ((18.5 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
-          ),
-          Number(
-            ((24.9 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
-          ),
-        ]);
-      }
     } else if (calculatedBmi >= 25 && calculatedBmi <= 29.9) {
       setMessage(
         "Your BMI suggest you are overweight. Your ideal weight is between"
       );
+    } else {
+      setMessage(
+        "Your BMI suggest you are obese. Your ideal weight is between"
+      );
+    }
+
+    if (unit === "metric") {
       setIdealWeight([
         Number((18.5 * (height / 100) * (height / 100)).toFixed(1)),
         Number((24.9 * (height / 100) * (height / 100)).toFixed(1)),
       ]);
     } else {
-      setMessage(
-        "Your BMI suggest you are obese. Your ideal weight is between"
-      );
+      const heightInMeters = height * 0.0254;
+
       setIdealWeight([
-        Number((18.5 * (height / 100) * (height / 100)).toFixed(1)),
-        Number((24.9 * (height / 100) * (height / 100)).toFixed(1)),
+        Number(
+          ((18.5 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
+        ),
+        Number(
+          ((24.9 * (heightInMeters * heightInMeters)) / 0.453592).toFixed(1)
+        ),
       ]);
     }
   }, [height, weight, unit]);
