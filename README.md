@@ -34,9 +34,10 @@ The BMI Calculator was built using:
 
 ## Installation and Setup
 
-1. Clone the repository: `git clone https://github.com/<your_username>/bmi-calculator.git`
+1. Clone the repository: `git clone https://github.com/colinswan/bmi-calculator.git`
 2. Navigate into the directory: `cd bmi-calculator`
-3. Open the `index.html` file in your preferred browser to start using the BMI calculator.
+3. Install the dependencies: `npm install` or `yarn`
+4. Start the local development server: `npm run dev` or `yarn dev`
 
 ## Contributing
 
