@@ -1,6 +1,8 @@
 # Body Mass Index (BMI) Calculator
 
-This project, a Body Mass Index (BMI) calculator, was taken on as a challenge from Frontend Mentor. It was built to test HTML form skills, JS logic and layout design skills. The challenge was to create a BMI calculator that accurately represents the given design as closely as possible.
+This project, a Body Mass Index (BMI) calculator, was taken on as a challenge from Frontend Mentor. It was built to test HTML form skills, JS logic, and layout design skills. The challenge was to create a BMI calculator that accurately represents the given design as closely as possible.
+
+You can view a live demo of the application [here](https://rococo-shortbread-8c82fb.netlify.app/).
 
 ## Table of Contents
 
@@ -19,7 +21,7 @@ This project, a Body Mass Index (BMI) calculator, was taken on as a challenge fr
 The Body Mass Index (BMI) Calculator has the following features:
 
 - Ability to select whether to use metric or imperial units
-- Inputs for user to enter their height and weight
+- Inputs for the user to enter their height and weight
 - Outputs BMI result, with the user's weight classification and healthy weight range
 - Responsive layout that adjusts according to the user's device screen size
 - Hover and focus states for all interactive elements on the page
@@ -38,6 +40,7 @@ The BMI Calculator was built using:
 2. Navigate into the directory: `cd bmi-calculator`
 3. Install the dependencies: `npm install` or `yarn`
 4. Start the local development server: `npm run dev` or `yarn dev`
+5. Open your preferred browser and navigate to `http://localhost:5173` (or check your terminal for the correct local URL) to start using the BMI calculator.
 
 ## Contributing
 
@@ -46,7 +49,6 @@ All contributions are welcome! If you see a way to improve the code or have a su
 ## Credits
 
 This project was undertaken by Colin Swan, as a challenge from Frontend Mentor. The layout and specifications were provided by Frontend Mentor, while the logic and styles were developed by Colin Swan.
-
 
 ## UI Desktop
 ![bmi-app-ui Desktop](./src/assets/bmi-ui-desktop.jpg)
