@@ -1,9 +1,9 @@
 // App.js
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 
-import BMIMeaning from "./components/BMIMeaning";
-import BMIBenefits from "./components/BMIBenefits";
-import Limitations from "./components/Limitations";
+import BMIMeaning from "./components/bmi-meaning/BMIMeaning";
+import BMIBenefits from "./components/bmi-benefits/BMIBenefits";
+import Limitations from "./components/bmi-limitations/Limitations";
 import "./App.css";
 
 function App() {

@@ -1,6 +1,6 @@
 //  Displays the image of a healthy person
 import "./HealthyImage.css";
-import healthyPerson from "../assets/healthy-person.png";
+import healthyPerson from "../../assets/healthy-person.png";
 
 function HealthyImage() {
   return (

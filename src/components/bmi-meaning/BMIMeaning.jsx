@@ -1,5 +1,5 @@
 //  Explains what the BMI means.
-import HealthyImage from "./HealthyImage";
+import HealthyImage from "../healthy-image/HealthyImage";
 import "./BMIMeaning.css";
 
 function BMIMeaning() {

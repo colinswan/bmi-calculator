@@ -1,5 +1,5 @@
 // Contains the title and description of the BMI.
-import BMICalculator from "./BMICalculator";
+import BMICalculator from "../bmi-calculator/BMICalculator";
 import "./Header.css";
 
 function Header() {
